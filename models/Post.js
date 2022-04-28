@@ -1,4 +1,5 @@
-import { Schema, model, ObjectId } from "mongoose";
+import pkg from 'mongoose';
+const { Schema, model, ObjectId } = pkg;
 
 const PostSchema = new Schema({
   title: { type: String, required: true },

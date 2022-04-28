@@ -1,4 +1,5 @@
-import { Schema, model, ObjectId } from "mongoose";
+import pkg from 'mongoose';
+const { Schema, model, ObjectId } = pkg;
 
 const CommentSchema = new Schema({
   text: { type: String, required: true },
