@@ -23,7 +23,7 @@ export const register = async (req, res) => {
       return res.status(400).json({ error: "Такой пользователь есть!" });
     }
 
-    const user = User.create({
+    const user = await User.create({
       email,
       password: await bcrypt.hash(password, 8),
       fullName,

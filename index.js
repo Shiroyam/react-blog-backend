@@ -2,7 +2,8 @@ import "dotenv/config";
 import express from "express";
 import wss from "express-ws";
 import cors from "cors";
-import route from "./routes/auth.js";
+import authRoute from "./routes/auth.js";
+import postRoute from "./routes/post.js"
 import mongoose from "mongoose";
 
 const app = express();
@@ -10,7 +11,8 @@ const PORT = process.env.PORT || 5050;
 
 app.use(cors());
 app.use(express.json());
-app.use("/api", route);
+app.use("/api", authRoute);
+app.use("/api", postRoute);
 
 async function stratApp() {
   try {
